@@ -14,6 +14,8 @@ provides:
       - client_encryption.enabled
       - validate_ssl_TF
       - cluster_name
+      - system_auth_keyspace_replication_factor
+      
 
 consumes:
   - name: seeds
@@ -263,12 +265,6 @@ properties:
     default: false
     description: cassandra ssl validate true or false
 
-  system_auth_keyspace_replication_factor:
-    description: |
-      The replication factor to apply to the 'system_auth' keyspace that holds
-      users and passwords.
-    default: 3
-
   disable_linux_swap:
     description: |
       Suppress Linux swap on pre-start, in order to ensure good
@@ -318,3 +314,6 @@ properties:
     default: 9001
     description: Port on which to expose metrics and web interface
 
+  system_auth_keyspace_replication_factor:
+    default: 3
+    description: Number of replicas per rack
