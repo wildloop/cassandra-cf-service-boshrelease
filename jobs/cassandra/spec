@@ -14,8 +14,7 @@ provides:
       - client_encryption.enabled
       - validate_ssl_TF
       - cluster_name
-      - system_auth_keyspace_replication_factor
-      
+      - system_auth_keyspace_replication_factor     
 
 consumes:
   - name: seeds
@@ -316,4 +315,4 @@ properties:
 
   system_auth_keyspace_replication_factor:
     default: 3
-    description: Number of replicas per rack
+    description: Number of copies of each row for a datacenter
