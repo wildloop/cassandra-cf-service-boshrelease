@@ -26,6 +26,8 @@ would deploy a Cassandra cluster:
 git clone https://github.com/orange-cloudfoundry/cassandra-cf-service-boshrelease.git cassandra-boshrelease
 cd cassandra-boshrelease
 
+./downloadblob.sh
+
 bosh create-release
 bosh upload-release
 
